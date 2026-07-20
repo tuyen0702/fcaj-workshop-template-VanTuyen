@@ -1,58 +1,46 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-07-10
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu các khái niệm bảo mật cơ bản trên AWS.
+* Nắm Shared Responsibility Model, IAM, Cognito, KMS, Security Hub và best practice bảo mật.
+* Biết cách tổ chức quyền truy cập tài nguyên AWS an toàn hơn.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Học Shared Responsibility Model.<br>- Phân biệt trách nhiệm bảo mật của AWS và trách nhiệm của người dùng khi triển khai hệ thống. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html |
+| 3 | - Học IAM chuyên sâu hơn: user, group, role, policy, permission boundary ở mức khái niệm.<br>- Ghi chú nguyên tắc least privilege và tránh dùng root user cho công việc hằng ngày. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html |
+| 4 | - Tìm hiểu IAM Policy và cách đọc policy JSON.<br>- Tìm hiểu Allow, Deny, Action, Resource, Condition.<br>- Ghi chú cách phân quyền Lambda truy cập S3/DynamoDB theo phạm vi cụ thể. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html |
+| 5 | - Tìm hiểu Amazon Cognito, KMS và Security Hub ở mức tổng quan.<br>- Ghi chú trường hợp sử dụng Cognito cho xác thực, KMS cho mã hóa và Security Hub cho kiểm tra bảo mật. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/ |
+| 6 | - Tìm hiểu một số S3 Security Best Practices.<br>- Tổng hợp checklist bảo mật: MFA, IAM least privilege, bucket policy, encryption, logging và kiểm soát public access. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
+
+### Gợi ý các bước thực hiện lab trong tuần 6:
+
+* Create IAM user.
+* Create IAM policy.
+* Create IAM role.
+* Switch roles.
+* Create restriction policy.
+* Test IAM user limits.
+* Review S3 security best practices.
+* Review KMS and Security Hub basic concepts.
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hiểu được mô hình chia sẻ trách nhiệm bảo mật trên AWS.
+* Nắm được IAM là thành phần quan trọng để kiểm soát quyền truy cập.
+* Biết cách đọc policy JSON cơ bản.
+* Hiểu vai trò của Cognito, KMS và Security Hub ở mức tổng quan.
+* Biết cần giới hạn quyền theo từng service và từng tài nguyên khi triển khai Lambda.
 
 
+---

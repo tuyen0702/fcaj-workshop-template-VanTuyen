@@ -1,59 +1,45 @@
 ---
 title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+date: 2026-07-10
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai các thành phần xử lý tự động cho đồ án.
+* Cấu hình S3 Input Bucket, DynamoDB, EventBridge, Step Functions, AI Analyzer Lambda và Cost Tool Lambda.
+* Kiểm thử luồng workflow tự động sau khi người dùng upload file.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Họp nhóm báo cáo tiến độ thực hiện.<br>- Kiểm tra lại upload backend, S3 Input Bucket và DynamoDB review history table.<br>- Bổ sung các field cần thiết cho item review: reviewId, fileName, status, uploadDate, updatedAt. | 29/06/2026 | 29/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html |
+| 3 | - Cấu hình S3 Input Bucket gửi sự kiện Object Created sang EventBridge.<br>- Tạo EventBridge rule bắt sự kiện upload file mới từ bucket input. | 30/06/2026 | 30/06/2026 | https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
+| 4 | - Tạo Step Functions state machine để điều phối AI Workflow.<br>- Thiết kế các state: AnalyzeArchitectureWithAI, EstimateCost, GenerateReport.<br>- Cấu hình input/output path giữa các state. | 01/07/2026 | 01/07/2026 | https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html |
+| 5 | - Triển khai AI Analyzer Lambda.<br>- Cấu hình quyền đọc S3 Input Bucket và quyền gọi Amazon Bedrock.<br>- Kiểm thử Lambda đọc ảnh từ S3 và trả về danh sách dịch vụ AWS phát hiện được. | 02/07/2026 | 02/07/2026 | https://docs.aws.amazon.com/lambda/latest/dg/welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
+| 6 | - Triển khai Cost Tool Lambda.<br>- Gọi AWS Price List API để lấy giá các dịch vụ có mapping.<br>- Kết hợp Bedrock để tạo nhận xét và đề xuất tối ưu chi phí.<br>- Kiểm thử Step Functions chạy qua Analyzer và Cost Tool. | 03/07/2026 | 03/07/2026 | https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/Welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html<br>https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html |
+
+### Gợi ý các bước thực hiện lab trong tuần 11:
+
+* Enable S3 EventBridge notification.
+* Create EventBridge rule for Object Created.
+* Configure EventBridge target to Step Functions.
+* Create Step Functions state machine.
+* Create AI Analyzer Lambda and Bedrock permissions.
+* Create Cost Tool Lambda and AWS Price List API permissions.
+* Test execution input with bucket, key and region.
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* EventBridge có thể bắt sự kiện upload file từ S3 Input Bucket.
+* Step Functions có thể điều phối các Lambda theo đúng thứ tự.
+* AI Analyzer Lambda kết nối được Amazon Bedrock để phân tích kiến trúc.
+* Cost Tool Lambda có thể tính chi phí ước tính cho một số dịch vụ AWS phổ biến.
+* Nhóm kiểm thử được workflow tự động đến bước phân tích và tính chi phí.
 
 
+---

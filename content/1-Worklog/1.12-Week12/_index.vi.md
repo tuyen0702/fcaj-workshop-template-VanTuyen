@@ -1,58 +1,45 @@
 ---
 title: "Worklog Tuần 12"
-date: 2024-01-01
-weight: 2
+date: 2026-07-10
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 ### Mục tiêu tuần 12:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thiện AI Workflow của đồ án.
+* Triển khai PDF Generator Lambda, S3 Report Bucket, ReportLab Layer và cập nhật DynamoDB sau khi phân tích hoàn tất.
+* Kiểm thử toàn bộ luồng và hoàn thiện báo cáo.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Triển khai PDF Generator Lambda.<br>- Nhận analysis result và cost result từ Step Functions.<br>- Gọi Amazon Bedrock để tạo nội dung final review cho báo cáo. | 06/07/2026 | 06/07/2026 | https://docs.aws.amazon.com/lambda/latest/dg/welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html<br>https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html |
+| 3 | - Cấu hình S3 Report Bucket để lưu report-data.json, report.html và report.pdf.<br>- Viết logic upload report lên S3 theo cấu trúc reports/{reviewId}/. | 07/07/2026 | 07/07/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html |
+| 4 | - Tạo ReportLab Layer cho Lambda để xuất file PDF.<br>- Bổ sung font DejaVuSans để hỗ trợ hiển thị tiếng Việt trong PDF.<br>- Gắn layer vào PDF Generator Lambda và kiểm thử tạo PDF. | 08/07/2026 | 08/07/2026 | https://docs.aws.amazon.com/lambda/latest/dg/chapter-layers.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html |
+| 5 | - Bổ sung logic cập nhật lịch sử review trong DynamoDB sau khi tạo report thành công.<br>- Cập nhật status từ uploaded sang completed, lưu score, detectedServices, recommendations, risks, costResult và reportFiles. | 09/07/2026 | 09/07/2026 | https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html |
+| 6 | - Kiểm thử toàn bộ luồng từ frontend upload file đến Step Functions, Bedrock analysis, cost estimation, report generation và hiển thị lịch sử trên frontend.<br>- Họp nhóm hoàn thiện báo cáo, rà soát hình ảnh minh họa và chuẩn bị nội dung trình bày. | 10/07/2026 | 10/07/2026 | https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html<br>https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html |
+
+### Gợi ý các bước thực hiện lab trong tuần 12:
+
+* Create S3 Report Bucket.
+* Create PDF Generator Lambda.
+* Configure Lambda environment variables: REPORT_BUCKET, TABLE_NAME, MODEL_ID, BEDROCK_REGION.
+* Create and attach ReportLab Layer.
+* Register Vietnamese font in ReportLab.
+* Update DynamoDB review history after workflow completed.
+* Verify report-data.json, report.html and report.pdf in S3.
+* Verify completed review on frontend.
+* Finalize internship report and project documentation.
 
 ### Kết quả đạt được tuần 12:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* PDF Generator Lambda tạo được báo cáo HTML/PDF.
+* S3 Report Bucket lưu được các file báo cáo theo từng reviewId.
+* ReportLab Layer hoạt động và hỗ trợ tạo file PDF.
+* DynamoDB review history được cập nhật sau khi workflow hoàn tất.
+* Frontend có thể hiển thị lịch sử review và trạng thái completed.
+* Nhóm hoàn thiện báo cáo và kiểm thử luồng chính của đồ án.

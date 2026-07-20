@@ -1,59 +1,45 @@
 ---
 title: "Worklog Tuần 8"
-date: 2024-01-01
-weight: 1
+date: 2026-07-10
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu giám sát, vận hành và tối ưu hệ thống trên AWS.
+* Tìm hiểu CloudWatch Logs, CloudWatch Alarms, SNS, Resource Tags, AWS Budgets và Cost Management.
+* Biết cách dùng log và alarm để theo dõi hệ thống serverless.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Học tổng quan về vận hành hệ thống trên AWS.<br>- Tìm hiểu CloudWatch Metrics, CloudWatch Logs và CloudWatch Dashboard. | 08/06/2026 | 08/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html |
+| 3 | - Tìm hiểu CloudWatch Alarms và cách đặt ngưỡng cảnh báo.<br>- Ghi chú các chỉ số thường theo dõi: errors, duration, invocations, throttles, CPU, memory. | 09/06/2026 | 09/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html |
+| 4 | - Tìm hiểu Amazon SNS và cách gửi thông báo khi có sự kiện hoặc alarm.<br>- Ghi chú mô hình CloudWatch Alarm → SNS → Email notification. | 10/06/2026 | 10/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/ |
+| 5 | - Tìm hiểu Resource Tags, Resource Groups và cách dùng tag để tổ chức tài nguyên.<br>- Ghi chú tag theo project, environment, owner và cost center. | 11/06/2026 | 11/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/ |
+| 6 | - Tìm hiểu AWS Budgets, Cost Management và hướng tối ưu chi phí.<br>- Ghi chú các hướng: right-sizing, tắt tài nguyên không dùng, kiểm soát data transfer và dùng storage class phù hợp. | 12/06/2026 | 12/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://docs.aws.amazon.com/ |
+
+### Gợi ý các bước thực hiện lab trong tuần 8:
+
+* Monitoring with Amazon CloudWatch.
+* Advanced Monitoring with CloudWatch and Grafana.
+* CloudWatch Advanced Workshop.
+* Resource Organization with Tags and Resource Groups.
+* Cost and Usage Management.
+* Right-Sizing with EC2 Resource Optimization.
+* Messaging Systems with SQS and SNS.
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Hiểu CloudWatch là dịch vụ quan trọng để giám sát tài nguyên và ứng dụng.
+* Nắm được cách CloudWatch Logs hỗ trợ debug Lambda.
+* Hiểu cách SNS có thể dùng để gửi thông báo qua email.
+* Biết dùng tag để tổ chức và quản lý tài nguyên theo project.
+* Nắm được các nguyên tắc tối ưu chi phí cơ bản khi học và thực hành AWS.
 
 
+---

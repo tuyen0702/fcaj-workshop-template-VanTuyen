@@ -1,59 +1,45 @@
 ---
 title: "Worklog Tuần 10"
-date: 2024-01-01
-weight: 2
+date: 2026-07-10
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Họp nhóm phân chia công việc cho từng thành viên.
+* Thiết kế kiến trúc tổng thể cho đồ án và phân tách backend/frontend.
+* Triển khai các thành phần nền tảng: S3 Static Website, CloudFront, API Gateway và Lambda Upload Service.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Họp nhóm phân chia công việc thực hiện cho từng thành viên.<br>- Xác định phạm vi phụ trách: frontend, upload backend, AI workflow, cost tool, report generator và tài liệu. | 22/06/2026 | 22/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Thiết kế kiến trúc tổng thể của hệ thống.<br>- Vẽ luồng xử lý: React Frontend → API Gateway → Lambda Upload Service → S3 Input Bucket → DynamoDB. | 23/06/2026 | 23/06/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html |
+| 4 | - Cấu hình S3 Static Website cho frontend.<br>- Chuẩn bị file build React và cấu hình bucket phục vụ nội dung tĩnh.<br>- Kiểm tra đường dẫn website sau khi upload frontend. | 24/06/2026 | 24/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
+| 5 | - Cấu hình CloudFront distribution cho frontend.<br>- Thiết lập origin trỏ về S3, default root object và kiểm tra truy cập qua CloudFront domain. | 25/06/2026 | 25/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-cloudfront-walkthrough.html |
+| 6 | - Thiết kế và triển khai API Gateway + Lambda Upload Service.<br>- Cấu hình route POST /upload, xử lý multipart upload, validate file, lưu file vào S3 và lưu metadata vào DynamoDB. | 26/06/2026 | 26/06/2026 | https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html |
+
+### Gợi ý các bước thực hiện lab trong tuần 10:
+
+* Configure S3 Static Website.
+* Configure CloudFront distribution.
+* Create API Gateway HTTP API.
+* Create Lambda Upload Service.
+* Configure Lambda environment variables.
+* Grant Lambda permissions to S3 and DynamoDB.
+* Test file upload from frontend or curl command.
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Nhóm đã phân chia được công việc rõ ràng.
+* Thiết kế được kiến trúc tổng thể của đồ án.
+* Cấu hình được frontend hosting bằng S3 và CloudFront.
+* Tạo được API Gateway route cho upload file.
+* Lambda Upload Service có thể upload file vào S3 Input Bucket và lưu metadata ban đầu vào DynamoDB.
 
 
+---
