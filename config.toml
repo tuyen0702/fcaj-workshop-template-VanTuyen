@@ -1,5 +1,5 @@
 baseURL = "https://tuyen0702.github.io/fcaj-workshop-template-VanTuyen/"
-relativeURLs = false
+relativeURLs = true
 canonifyURLs = false
 defaultContentLanguage = "en"
 

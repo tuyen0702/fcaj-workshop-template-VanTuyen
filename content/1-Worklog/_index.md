@@ -1,39 +1,44 @@
 ---
 title: "Worklog"
-date: 2024-01-01
+date: 2026-07-10
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+### Worklog Overview
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+In this section, the worklog records the process of learning, practicing, and implementing the project throughout the internship period.
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+The internship was carried out over **12 weeks**, starting from **20/04/2026** to **10/07/2026**. The internship content was divided into two main phases:
 
-**Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
+```text
+Phase 1: Learning and practicing AWS fundamentals
+Week 1 → Week 8
 
-**Week 2:** [Doing task A...](1.2-week2/)
+Phase 2: Researching, designing, and implementing the group project
+Week 9 → Week 12
 
-**Week 3:** [Doing task B...](1.3-week3/)
+Week 1: Overview of cloud computing and AWS
 
-**Week 4:** [Doing task C...](1.4-week4/)
+Week 2: Learning about Amazon VPC and basic networking components on AWS
 
-**Week 5:** [Doing task D...](1.5-week5/)
+Week 3: Learning about Amazon EC2 and Compute services on AWS
 
-**Week 6:** [Doing task E...](1.6-week6/)
+Week 4: Learning about Amazon S3 and configuring Static Website Hosting
 
-**Week 7:** [Doing task G...](1.7-week7/)
+Week 5: Learning about Amazon CloudFront, Lightsail, Auto Scaling, and CloudWatch
 
-**Week 8:** [Doing task H...](1.8-week8/)
+Week 6: Learning about security and access management on AWS
 
-**Week 9:** [Doing task I...](1.9-week9/)
+Week 7: Learning about database services on AWS
 
-**Week 10:** [Doing task L...](1.10-week10/)
+Week 8: Learning about monitoring, operations, and cost optimization on AWS
 
-**Week 11:** [Doing task M...](1.11-week11/)
+Week 9: Starting to research and define the direction of the group project
 
-**Week 12:** [Doing task N...](1.12-week12/)
+Week 10: Designing the overall architecture and implementing the upload backend
+
+Week 11: Implementing the AI Workflow with EventBridge, Step Functions, Bedrock, and Cost Tool
+
+Week 12: Completing the PDF Generator, ReportLab Layer, DynamoDB update, and system testing
