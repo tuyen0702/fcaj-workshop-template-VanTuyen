@@ -1,57 +1,47 @@
 ---
-title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 4"
+date: 2026-07-10
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
-### Week 4 Objectives:
+### Objectives for Week 4:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand AWS storage services, focusing on Amazon S3.
+* Learn how to create an S3 Bucket, upload objects, configure access permissions, and configure Static Website Hosting.
+* Understand basic concepts of bucket policy, object key, versioning, and storage class.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks to be completed this week:
+
+| Day | Task | Start Date | Completion Date | Reference Sources |
+| --- | --- | --- | --- | --- |
+| Monday | - Study the overview of AWS storage services.<br>- Learn about Amazon S3, S3 Bucket, Object, Object Key, Region, and Storage Class. | 11/05/2026 | 11/05/2026 | https://cloudjourney.awsstudygroup.com/vi/<br>https://000057.awsstudygroup.com/vi/<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html |
+| Tuesday | - Learn how to create an S3 Bucket and upload objects.<br>- Learn about Block Public Access, Object Ownership, and object access permissions. | 12/05/2026 | 12/05/2026 | https://000057.awsstudygroup.com/vi/<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html |
+| Wednesday | - Learn about S3 Static Website Hosting.<br>- Take notes on index document, error document, and bucket website endpoint.<br>- Try configuring a static website with a simple HTML file. | 13/05/2026 | 13/05/2026 | https://000057.awsstudygroup.com/vi/<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
+| Thursday | - Learn about bucket policy and how to grant read access to objects for a static website.<br>- Learn about CORS in S3 and when CORS needs to be configured for a frontend. | 14/05/2026 | 14/05/2026 | https://000057.awsstudygroup.com/vi/<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html |
+| Friday | - Learn about S3 Versioning, lifecycle, and some storage best practices.<br>- Summarize the steps to deploy a static website using S3.<br>- Take notes on common errors when accessing an S3 website. | 15/05/2026 | 15/05/2026 | https://000057.awsstudygroup.com/vi/<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html |
+
+### Lab implementation steps for Week 4:
+
+* Open the S3 Console, select Create bucket, and create a globally unique bucket name.
+* Choose a suitable Region, for example ap-southeast-1, then configure Object Ownership and Block Public Access according to the lab requirements.
+* Upload static website files such as index.html, error.html, CSS, JavaScript, or images.
+* Open the bucket Properties tab, enable Static website hosting, and define the index document/error document.
+* Create a bucket policy to allow public read access to objects if the lab requires the website to be publicly accessible.
+* Check the website endpoint provided by S3 and test it in a browser.
+* Enable Bucket Versioning to track object versions when uploading files again.
+* Learn about Lifecycle rule to transition or delete old objects when storage optimization is needed.
+* Disable public access or delete the bucket after finishing the lab if it is no longer used.
+
+### Results achieved in Week 4:
+
+* Understood how S3 stores data as objects.
+* Understood the structure of Bucket, Object, and Object Key.
+* Understood the basic steps to enable Static Website Hosting.
+* Understood how bucket policy and public access affect website accessibility.
+* Understood that S3 can be used as storage for frontend files or uploaded files in the project.
 
 
-### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+---
