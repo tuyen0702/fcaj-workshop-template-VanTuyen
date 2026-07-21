@@ -17,21 +17,24 @@ pre: " <b> 1.11. </b> "
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 2 | - Họp nhóm báo cáo tiến độ thực hiện.<br>- Kiểm tra lại upload backend, S3 Input Bucket và DynamoDB review history table.<br>- Bổ sung các field cần thiết cho item review: reviewId, fileName, status, uploadDate, updatedAt. | 29/06/2026 | 29/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html |
-| 3 | - Cấu hình S3 Input Bucket gửi sự kiện Object Created sang EventBridge.<br>- Tạo EventBridge rule bắt sự kiện upload file mới từ bucket input. | 30/06/2026 | 30/06/2026 | https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
-| 4 | - Tạo Step Functions state machine để điều phối AI Workflow.<br>- Thiết kế các state: AnalyzeArchitectureWithAI, EstimateCost, GenerateReport.<br>- Cấu hình input/output path giữa các state. | 01/07/2026 | 01/07/2026 | https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html<br>https://docs.aws.amazon.com/lambda/latest/dg/welcome.html |
-| 5 | - Triển khai AI Analyzer Lambda.<br>- Cấu hình quyền đọc S3 Input Bucket và quyền gọi Amazon Bedrock.<br>- Kiểm thử Lambda đọc ảnh từ S3 và trả về danh sách dịch vụ AWS phát hiện được. | 02/07/2026 | 02/07/2026 | https://docs.aws.amazon.com/lambda/latest/dg/welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html<br>https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html |
-| 6 | - Triển khai Cost Tool Lambda.<br>- Gọi AWS Price List API để lấy giá các dịch vụ có mapping.<br>- Kết hợp Bedrock để tạo nhận xét và đề xuất tối ưu chi phí.<br>- Kiểm thử Step Functions chạy qua Analyzer và Cost Tool. | 03/07/2026 | 03/07/2026 | https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/Welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html<br>https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html |
+| 2 | - Họp nhóm báo cáo tiến độ thực hiện.<br>- Kiểm tra lại upload backend, S3 Input Bucket và DynamoDB review history table.<br>- Bổ sung các field cần thiết cho item review: reviewId, fileName, status, uploadDate, updatedAt. | 29/06/2026 | 29/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html<br>https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html | https://chatgpt.com/|
+| 3 | - Cấu hình S3 Input Bucket gửi sự kiện Object Created sang EventBridge.<br>- Tạo EventBridge rule bắt sự kiện upload file mới từ bucket input. | 30/06/2026 | 30/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventBridge.html<br>https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rules.html | https://chatgpt.com/ |
+| 4 | - Tạo Step Functions state machine để điều phối AI Workflow.<br>- Thiết kế các state: AnalyzeArchitectureWithAI, EstimateCost, GenerateReport.<br>- Cấu hình input/output path giữa các state. | 01/07/2026 | 01/07/2026 | https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html<br>https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html | https://chatgpt.com/ |
+| 5 | - Triển khai AI Analyzer Lambda.<br>- Cấu hình quyền đọc S3 Input Bucket và quyền gọi Amazon Bedrock.<br>- Kiểm thử Lambda đọc ảnh từ S3 và trả về danh sách dịch vụ AWS phát hiện được. | 02/07/2026 | 02/07/2026 | https://docs.aws.amazon.com/lambda/latest/dg/welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html | https://chatgpt.com/ |
+| 6 | - Triển khai Cost Tool Lambda.<br>- Gọi AWS Price List API để lấy giá các dịch vụ có mapping.<br>- Kết hợp Bedrock để tạo nhận xét và đề xuất tối ưu chi phí.<br>- Kiểm thử Step Functions chạy qua Analyzer và Cost Tool. | 03/07/2026 | 03/07/2026 | https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/Welcome.html<br>https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html | https://chatgpt.com/ |
 
-### Gợi ý các bước thực hiện lab trong tuần 11:
+### Các bước thực hiện lab trong tuần 11:
 
-* Enable S3 EventBridge notification.
-* Create EventBridge rule for Object Created.
-* Configure EventBridge target to Step Functions.
-* Create Step Functions state machine.
-* Create AI Analyzer Lambda and Bedrock permissions.
-* Create Cost Tool Lambda and AWS Price List API permissions.
-* Test execution input with bucket, key and region.
+* Vào S3 Input Bucket, bật Amazon EventBridge trong phần Properties để bucket gửi sự kiện sang EventBridge.
+* Tạo EventBridge rule với event pattern bắt sự kiện Object Created từ bucket input.
+* Cấu hình target của EventBridge rule là Step Functions state machine.
+* Dùng input transformer để truyền bucket, key và region sang workflow.
+* Tạo Step Functions state machine gồm các bước AnalyzeArchitectureWithAI, EstimateCost và GenerateReport.
+* Tạo AI Analyzer Lambda, cấu hình MODEL_ID và BEDROCK_REGION.
+* Cấp quyền cho AI Analyzer Lambda đọc object từ S3 Input Bucket và gọi Bedrock model.
+* Test AI Analyzer bằng event mẫu gồm bucket, key và region.
+* Tạo Cost Tool Lambda, cấu hình quyền pricing:GetProducts và bedrock:InvokeModel.
+* Test Step Functions bằng một object đã upload và kiểm tra output của từng state.
 
 ### Kết quả đạt được tuần 11:
 

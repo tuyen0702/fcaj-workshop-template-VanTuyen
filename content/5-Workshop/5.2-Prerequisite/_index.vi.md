@@ -74,8 +74,6 @@ S3 frontend bucket được sử dụng để lưu các file React production bu
 ai-aws-reviewer-frontend-tiersteam
 ```
 
-![S3 React App](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-frontend-tiersteam.png)
-![S3 React App Policy](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-frontend-tiersteam-policy.png)
 
 CloudFront distribution được sử dụng để phân phối website đến người dùng.
 
@@ -91,10 +89,6 @@ CloudFront domain đã deploy là:
 https://d9353ayez9zar.cloudfront.net
 ```
 
-![CloudFront](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront.png)
-![CloudFront](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront-2.png)
-![CloudFront](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront-3.png)
-![CloudFront](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-cloudfront-4.png)
 
 Sau khi upload bản build mới, cần tạo CloudFront invalidation:
 
@@ -125,8 +119,6 @@ GET /reviews/{reviewId}/status
 
 Các routes này được tích hợp với Lambda Upload Service.
 
-![API Gateway](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-api.png)
-![API Gateway](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-api-cors.png)
 
 #### Tài nguyên lưu trữ
 
@@ -144,7 +136,6 @@ Các diagram được upload sẽ được lưu theo cấu trúc key sau:
 uploads/{reviewId}/{fileName}
 ```
 
-![S3 Input](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-input-bucket-tiersteam.png)
 
 DynamoDB table lưu review metadata và review history:
 
@@ -158,7 +149,6 @@ Partition key là:
 reviewId
 ```
 
-![DynamoDB](/images/5-Workshop/5.2-Prerequisite/AIArchitectureReviews.png)
 
 #### Lambda Upload Service
 
@@ -180,7 +170,6 @@ Function này xử lý các nhiệm vụ sau:
 + Trả review information về frontend
 + Truy xuất review history và review status
 
-![Lambda](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-upload-service.png)
 
 Các Lambda environment variables cần có là:
 
@@ -191,7 +180,6 @@ MAX_FILE_SIZE_MB = 5
 ALLOWED_ORIGINS = http://localhost:5173,https://d9353ayez9zar.cloudfront.net
 ```
 
-![Lambda Configuration](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-upload-service-env.png)
 
 #### File kiểm thử
 
@@ -230,5 +218,3 @@ Response ví dụ:
   "message": "Upload successful"
 }
 ```
-
-![Lambda test file](/images/5-Workshop/5.2-Prerequisite/ai-aws-reviewer-upload-service-test-files.png)
