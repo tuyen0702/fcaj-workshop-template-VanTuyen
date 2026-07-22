@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-> In this section, I would like to share my personal feedback about my experience in the First Cloud AI Journey program. These comments are intended to help the FCAJ team improve the internship experience for future participants.
-
 ### General Evaluation
 
 **1. Working Environment**  
