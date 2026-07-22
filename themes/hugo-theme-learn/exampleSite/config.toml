@@ -4,7 +4,7 @@ defaultContentLanguage = "en"
 
 title = "Hugo Learn Documentation"
 theme = "hugo-theme-learn"
-themesdir = "../.."
+themesdir = "/static"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
