@@ -49,7 +49,7 @@ This approach allows each component to operate independently and significantly r
 
 ## 3. Overall Architecture
 
-![Kiến trúc Microservices](/static/images//3-BlogsPosted/Blog1.jpg)
+![Kiến trúc Microservices](../../images//3-BlogsPosted/Blog1.jpg)
 
 The system is built using the following main components:
 

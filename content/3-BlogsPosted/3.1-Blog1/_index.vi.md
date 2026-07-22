@@ -55,7 +55,7 @@ Cách tiếp cận này giúp các thành phần hoạt động độc lập và
 
 > Chèn sơ đồ kiến trúc tại đây
 
-![Kiến trúc Microservices](/static/images//3-BlogsPosted/Blog1.jpg)
+![Kiến trúc Microservices](../../images//3-BlogsPosted/Blog1.jpg)
 
 Hệ thống được xây dựng với các thành phần chính:
 

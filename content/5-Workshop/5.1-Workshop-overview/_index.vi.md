@@ -32,4 +32,4 @@ Trong workshop này, hệ thống **AI AWS Architecture Reviewer** sẽ được
 
 Kiến trúc bên dưới thể hiện workflow tổng thể của hệ thống **AI AWS Architecture Reviewer**, từ bước người dùng truy cập website thông qua CloudFront được bảo vệ bởi AWS WAF, upload diagram, xử lý AI analysis, ước tính chi phí, tạo report, lưu review history cho đến monitoring và gửi cảnh báo lỗi hệ thống bằng CloudWatch và SNS.
 
-![Tổng quan AI AWS Architecture Reviewer](/static/images/5-Workshop/5.1-Workshop-overview/ai-aws-architecture-reviewer-overview.png)
+![Tổng quan AI AWS Architecture Reviewer](../../images/5-Workshop/5.1-Workshop-overview/ai-aws-architecture-reviewer-overview.png)
