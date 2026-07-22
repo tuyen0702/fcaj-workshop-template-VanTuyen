@@ -1,46 +1,34 @@
 ---
-title: "Các events đã tham gia"
-date: 2024-01-01
+title: "Các sự kiện đã tham gia"
+date: 2026-07-10
 weight: 4
 chapter: false
-pre: " <b> 4. </b> "
+draft: false
+pre: "<b>4.</b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Các Sự Kiện Đã Tham Gia
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+Trong quá trình thực tập, em đã có cơ hội tham gia các sự kiện công nghệ do cộng đồng AWS tổ chức. Đây là những trải nghiệm thực tế giúp em cập nhật kiến thức mới, tiếp cận các giải pháp đang được ứng dụng trong doanh nghiệp và học hỏi kinh nghiệm từ các diễn giả trong ngành.
 
+Thông qua các sự kiện, em không chỉ mở rộng kiến thức về AWS, Generative AI và kiến trúc hệ thống mà còn rèn luyện khả năng lắng nghe, tổng hợp thông tin, kết nối với cộng đồng và liên hệ kiến thức đã học với project thực tế.
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+## [Event 1 – AWS Vietnam Community Day – May 2026](4.1-Event1/)
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+&emsp;**Tên sự kiện:** AWS Vietnam Community Day – May 2026
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+&emsp;**Thời gian:** Ngày 23/05/2026
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+&emsp;**Địa điểm:** Tầng 26, Tòa nhà Bitexco, Thành phố Hồ Chí Minh
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
+&emsp;**Đơn vị tổ chức:** FCAJ – First Cloud AI Journey
 
+&emsp;**Hình thức tham dự:** Trực tiếp
 
+&emsp;**Vai trò trong sự kiện:** Người tham dự
 
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+&emsp;**Nội dung chính:** Sự kiện gồm nhiều phiên chia sẻ về context engineering, Amazon Quick Suite, Amazon CloudFront, tính bất định của mô hình ngôn ngữ lớn, kiến trúc multi-agent cấp doanh nghiệp và kinh nghiệm xây dựng sản phẩm AI trong hackathon.
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+&emsp;**Kết quả và giá trị đạt được:** Em hiểu rõ hơn cách cung cấp context hiệu quả cho AI, phương pháp thiết kế hệ thống multi-agent, vai trò của guardrails và output validation, cũng như cách sử dụng CloudFront để nâng cao hiệu năng, bảo mật và độ tin cậy cho ứng dụng. Những kiến thức này có thể được áp dụng trực tiếp vào project AI AWS Architecture Reviewer.
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
+> Chi tiết nội dung, bài học và trải nghiệm tại sự kiện được trình bày trong trang Event 1.
