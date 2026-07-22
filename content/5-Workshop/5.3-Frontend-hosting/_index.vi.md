@@ -87,7 +87,7 @@ Các tài nguyên hình ảnh
 Các tệp frontend tĩnh khác
 ```
 
-![S3 React App](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam.png)
+![S3 React App](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam.png)
 
 ---
 
@@ -123,7 +123,7 @@ CloudFront distribution ID:
 E2JHD76RIC6AML
 ```
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront.png)
 
 ---
 
@@ -133,7 +133,7 @@ S3 frontend bucket được giữ ở chế độ private. Để cho phép Cloud
 
 Cấu hình này giúp cải thiện tính bảo mật vì người dùng không thể truy cập trực tiếp vào S3 bucket. Họ phải truy cập website thông qua CloudFront.
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-2.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-2.png)
 
 ---
 
@@ -143,7 +143,7 @@ Sau khi cấu hình Origin Access Control, cập nhật S3 bucket policy để c
 
 Bucket policy cho phép CloudFront thực hiện hành động `s3:GetObject` trên các tệp frontend.
 
-![S3 React App Policy](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam-policy.png)
+![S3 React App Policy](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam-policy.png)
 
 ---
 
@@ -178,7 +178,7 @@ Vì frontend là một ứng dụng React Single Page Application, việc truy c
 
 Điều này cho phép React Router xử lý chính xác các route của frontend.
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-3.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-3.png)
 
 ---
 
@@ -223,7 +223,7 @@ Người dùng
 → React Application
 ```
 
-![AWS WAF](../../images/5-Workshop/5.3-Frontend-hosting/AWS-WAF.jpg)
+![AWS WAF](/images/5-Workshop/5.3-Frontend-hosting/AWS-WAF.jpg)
 
 ---
 
@@ -239,7 +239,7 @@ aws cloudfront create-invalidation --distribution-id E2JHD76RIC6AML --paths "/*"
 
 Chờ cho đến khi trạng thái invalidation chuyển thành **Completed**.
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-4.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-4.png)
 
 ---
 
@@ -253,7 +253,7 @@ https://d9353ayez9zar.cloudfront.net
 
 React frontend sẽ được tải thành công thông qua CloudFront. Đồng thời, các request truy cập frontend sẽ đi qua lớp bảo vệ của AWS WAF được gắn với CloudFront distribution.
 
-![React App](../../images/5-Workshop/5.3-Frontend-hosting/Website-project.png)
+![React App](/images/5-Workshop/5.3-Frontend-hosting/Website-project.png)
 
 ---
 

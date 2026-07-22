@@ -32,4 +32,4 @@ In this workshop, the **AI AWS Architecture Reviewer** system is built and deplo
 
 The architecture below shows the overall workflow of the **AI AWS Architecture Reviewer** system, from users accessing the website through CloudFront protected by AWS WAF, uploading diagrams, processing AI analysis, estimating costs, generating reports, storing review history, to monitoring and sending system error alerts using CloudWatch and SNS.
 
-![AI AWS Architecture Reviewer Overview](../../images/5-Workshop/5.1-Workshop-overview/ai-aws-architecture-reviewer-overview.png)
+![AI AWS Architecture Reviewer Overview](/images/5-Workshop/5.1-Workshop-overview/ai-aws-architecture-reviewer-overview.png)

@@ -87,7 +87,7 @@ Image assets
 Other static frontend files
 ```
 
-![S3 React App](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam.png)
+![S3 React App](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam.png)
 
 ---
 
@@ -123,7 +123,7 @@ CloudFront distribution ID:
 E2JHD76RIC6AML
 ```
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront.png)
 
 ---
 
@@ -133,7 +133,7 @@ The S3 frontend bucket is kept private. To allow CloudFront to read files from t
 
 This configuration improves security because users cannot access the S3 bucket directly. They must access the website through CloudFront.
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-2.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-2.png)
 
 ---
 
@@ -143,7 +143,7 @@ After configuring Origin Access Control, update the S3 bucket policy to allow th
 
 The bucket policy allows CloudFront to perform the `s3:GetObject` action on the frontend files.
 
-![S3 React App Policy](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam-policy.png)
+![S3 React App Policy](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-frontend-tiersteam-policy.png)
 
 ---
 
@@ -178,7 +178,7 @@ To solve this issue, custom error responses are configured in CloudFront:
 
 This allows React Router to correctly handle frontend routes.
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-3.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-3.png)
 
 ---
 
@@ -223,7 +223,7 @@ User
 → React Application
 ```
 
-![AWS WAF](../../images/5-Workshop/5.3-Frontend-hosting/AWS-WAF.jpg)
+![AWS WAF](/images/5-Workshop/5.3-Frontend-hosting/AWS-WAF.jpg)
 
 ---
 
@@ -239,7 +239,7 @@ aws cloudfront create-invalidation --distribution-id E2JHD76RIC6AML --paths "/*"
 
 Wait until the invalidation status changes to **Completed**.
 
-![CloudFront](../../images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-4.png)
+![CloudFront](/images/5-Workshop/5.3-Frontend-hosting/ai-aws-reviewer-cloudfront-4.png)
 
 ---
 
@@ -253,7 +253,7 @@ https://d9353ayez9zar.cloudfront.net
 
 The React frontend is loaded successfully through CloudFront. At the same time, frontend access requests pass through the AWS WAF protection layer associated with the CloudFront distribution.
 
-![React App](../../images/5-Workshop/5.3-Frontend-hosting/Website-project.png)
+![React App](/images/5-Workshop/5.3-Frontend-hosting/Website-project.png)
 
 ---
 

@@ -143,7 +143,7 @@ The architecture includes the following main steps:
 18. Amazon SNS receives alerts from CloudWatch Alarm and sends email alerts when the system encounters important errors.
 19. AWS IAM applies least privilege access between services.
 
-![AI AWS Architecture Reviewer Architecture](../../images/2-Proposal/ai-aws-architecture-reviewer-proposal.png)
+![AI AWS Architecture Reviewer Architecture](/images/2-Proposal/ai-aws-architecture-reviewer-proposal.png)
 
 ### AWS Services Used
 

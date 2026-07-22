@@ -143,7 +143,7 @@ Kiến trúc bao gồm các bước chính sau:
 18. Amazon SNS nhận cảnh báo từ CloudWatch Alarm và gửi email alert khi hệ thống phát sinh lỗi quan trọng.
 19. AWS IAM áp dụng least privilege access giữa các services.
 
-![AI AWS Architecture Reviewer Architecture](../../images/2-Proposal/ai-aws-architecture-reviewer-proposal.png)
+![AI AWS Architecture Reviewer Architecture](/images/2-Proposal/ai-aws-architecture-reviewer-proposal.png)
 
 ### Các dịch vụ AWS sử dụng
 
